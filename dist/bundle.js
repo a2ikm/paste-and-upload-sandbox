@@ -1,2 +1,2 @@
-document.getElementById("editor").onpaste=function(t){var e,i=t.clipboardData.items[0];"string"!=i.kind&&(i.type.startsWith("image/")&&(e=i.getAsFile(),console.log(e)),t.preventDefault)};
+(()=>{var e;(e=document.getElementById("editor")).onpaste=function(t){var n,a=t.clipboardData.items[0],i=e.selectionStart,s=e.selectionEnd;"string"!=a.kind&&(a.type.startsWith("image/")&&(n=a.getAsFile().name),e.setRangeText(n,i,s),t.preventDefault)}})();
 //# sourceMappingURL=bundle.js.map
