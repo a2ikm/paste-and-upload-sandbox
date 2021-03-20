@@ -1,2 +1,2 @@
-(()=>{var e;(e=document.getElementById("editor")).onpaste=function(t){var n,a=t.clipboardData.items[0],i=e.selectionStart,s=e.selectionEnd;"string"!=a.kind&&(a.type.startsWith("image/")&&(n=a.getAsFile().name),e.setRangeText(n,i,s),t.preventDefault)}})();
+(()=>{var t;(t=document.getElementById("editor")).onpaste=function(e){var n,o,a,c=e.clipboardData.items[0],i=t.selectionStart,l=t.selectionEnd;"string"!=c.kind&&(c.type.startsWith("image/")&&(o=c.getAsFile(),(a=new FormData).append("file",o),fetch("http://localhost:4567/upload",{method:"POST",mode:"no-cors",body:a}).then((function(t){return console.log(t)})).catch((function(t){return console.log(t)})),n=o.name),t.setRangeText(n,i,l),e.preventDefault)}})();
 //# sourceMappingURL=bundle.js.map

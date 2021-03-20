@@ -1,4 +1,12 @@
 const uploadImage = (file: File): string => {
+  const form = new FormData()
+  form.append('file', file)
+  fetch('http://localhost:4567/upload', {
+    method: 'POST',
+    mode: 'no-cors',
+    body: form,
+  }).then(response => console.log(response)).catch(error => console.log(error))
+
   return file.name
 }
 
